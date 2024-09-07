@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shri's store</title>
+  <h1>Welcome to Shri's store!</h1>
+</head>
+<body>
+  <style>
+    * {box-sizing: border-box}
+    body {font-family: "Lato", sans-serif;
+  }
+    
+    /* Style the tab */
+    .tab {
+      float: left;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      width: 30%;
+      height: 300px;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+      display: block;
+      background-color: inherit;
+      color: black;
+      padding: 22px 16px;
+      width: 100%;
+      border: none;
+      outline: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+      float: left;
+      padding: 0px 12px;
+      border: 1px solid #ccc;
+      width: 70%;
+      border-left: none;
+      height: 300px;
+    }
+    </style>
+    </head>
+    <body>
+    
+  
+    <p>items in stock:</p>
+    
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Snacks')" id="defaultOpen">snacks</button>
+      <button class="tablinks" onclick="openCity(event, 'Toys')">toys</button>
+      <button class="tablinks" onclick="openCity(event, 'Info')">info</button>
+    </div>
+    
+    <div id="Snacks" class="tabcontent">
+      <h3>I have a lot in stock!</h3>
+      <p><img src="">Takis-$2</p>
+      <p><img src="" >soda-$2</p>
+      <p><img src="" >cookies-$1.5</p>
+    </div>
+    
+    <div id="Toys" class="tabcontent">
+      <h3>Cool toys and accsesories</h3>
+      <p><img src="">croc charms</p> 
+      <p><img src="">slime</p> 
+    </div>
+    
+    <div id="Info" class="tabcontent">
+      <h3>info</h3>
+      <p>3-3:30 <a href="https://www.google.ca/maps/place/Parkvale+Park/@43.3892284,-80.4824768,18z/data=!4m10!1m2!2m1!1sparkvale+park!3m6!1s0x882c0a9931b39b9d:0xd1908aa4597cbeb9!8m2!3d43.388337!4d-80.4805992!15sCg1wYXJrdmFsZSBwYXJrkgEEcGFya-ABAA!16s%2Fg%2F11crrnp5bz?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D">parkvale park</a> </p>
+    </div>
+    
+    <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
